@@ -1,0 +1,23 @@
+$grid-spacing: 20px;
+
+.container.app {
+  h1 {
+    margin-top: 20px;
+  }
+
+  margin-bottom: 30px;
+}
+
+ul.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: $grid-spacing;
+
+  & > li {
+    margin-bottom: $grid-spacing;
+  }
+}
+
+.navigation {
+  margin-bottom: 20px;
+}
