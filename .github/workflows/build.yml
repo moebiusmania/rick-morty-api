@@ -5,7 +5,7 @@ name: Deploy React App to GH pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
