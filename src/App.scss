@@ -1,3 +1,9 @@
+@import "./../node_modules/bootstrap/scss/functions";
+@import "./../node_modules/bootstrap/scss/variables";
+@import "./../node_modules/bootstrap/scss/mixins";
+@import "./../node_modules/bootstrap/scss/utilities";
+
+
 $grid-spacing: 20px;
 
 .container.app {
@@ -9,12 +15,25 @@ $grid-spacing: 20px;
 }
 
 ul.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: $grid-spacing;
 
   & > li {
     margin-bottom: $grid-spacing;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  ul.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $grid-spacing;
+  }
+}
+
+@include media-breakpoint-up(lg) { 
+  ul.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: $grid-spacing;
   }
 }
 
