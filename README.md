@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Rick & Mordy API homework
+
+Quickstart:
+1. clone this repo
+2. cd into it and `$ npm install`
+3. `$ npm start`
+
+or visit [https://moebiusmania.github.io/rick-morty-api/](https://moebiusmania.github.io/rick-morty-api/)
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
