@@ -1,4 +1,4 @@
-# Rick & Mordy API homework
+# Rick & Morty API homework
 
 Quickstart:
 1. clone this repo

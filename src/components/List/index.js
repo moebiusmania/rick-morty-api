@@ -14,7 +14,8 @@ const mock = {
 }
 
 const List = () => {
-  const URL = 'https://rickandmortyapi.com/api/character'
+  const URL = 'https://rickandmortyapi.com/api/character';
+  
   const [pag, setPag] = useState(mock.pagination);
   const [items, setItems] = useState([]);
 
