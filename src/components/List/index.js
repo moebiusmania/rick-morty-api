@@ -13,28 +13,48 @@ const mock = {
   }
 }
 
-const List = () => {
+const List = (props) => {
+  /**
+   * Component's data, props and state
+   */
   const URL = 'https://rickandmortyapi.com/api/character';
-  
+  const filter = props.filter || '';
+
   const [pag, setPag] = useState(mock.pagination);
   const [items, setItems] = useState([]);
 
+  /**
+   * Internal utilities
+   */
   const getData = (endpoint) => http(endpoint).then(data => {
     setPag(data.info);
     setItems(data.results);
   });
 
-  const navigate = (direction) => direction === 'next' ?
-    getData(pag.next) : getData(pag.prev);
+  const addFilter = (str, concat) => `${str}${concat ? '&' : '/?'}name=${filter}`;
 
+  const navigate = (direction) => direction === 'next' ?
+    getData(addFilter(pag.next, true)) : getData(addFilter(pag.prev, true));
+
+  /**
+   * Side Effects
+   */
   useEffect(() => 
     window.scrollTo({ top: 0, behavior: 'smooth' })
   , [pag]);
 
   useEffect(() => {
+    getData(addFilter(URL));
+    // eslint-disable-next-line
+  }, [filter]);
+
+  useEffect(() => {
     getData(URL);
   }, []);
 
+  /**
+   * Template
+   */
   return (
     <>
       <ul className="list-unstyled cards">

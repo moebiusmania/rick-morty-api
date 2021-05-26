@@ -2,8 +2,14 @@
 import { statusBadge } from './../../utils';
 
 const Card = (props) => {
+  /**
+   * Component's data, props and state
+   */
   const item = props.data || {};
-
+  
+  /**
+   * Template
+   */
   return (
     <div className="card">
       <img src={item.image} className="card-img-top" alt={item.name} />
